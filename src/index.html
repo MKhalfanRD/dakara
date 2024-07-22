@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dakara</title>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <!-- Tailwind style -->
+    <link rel="stylesheet" href="/src/output.css">
+    <!-- Alpine js -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="px-4 py-4" x-data="{ navOpen: false }">
+        <div class="container mx-auto">
+            <!-- Small Screen Navbar -->
+            <div class="flex items-center justify-between lg:hidden">
+                <h1 class="text-xl">DAKARA</h1>
+                <button @click="navOpen = !navOpen">
+                    <img src="../public/asset/toggle.svg" alt="toggle" class="w-10">
+                </button>
+            </div>
+            <!-- Large Screen Navbar -->
+            <div class="hidden lg:flex lg:items-center lg:justify-between">
+                <div class="flex items-center gap-4">
+                    <button @click="navOpen = !navOpen">
+                        <img src="../public/asset/toggle.svg" alt="toggle" class="w-10">
+                    </button>
+                    <h1 class="text-xl">DAKARA</h1>
+                </div>
+                <ul class="flex gap-10">
+                    <li class="font-bold text-sm text-gray-400"><a href="#">Home</a></li>
+                    <li class="font-bold text-sm text-gray-400"><a href="#">About</a></li>
+                    <li class="font-bold text-sm text-gray-400"><a href="#">Business</a></li>
+                    <li class="font-bold text-sm text-gray-400"><a href="#">Services</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="fixed bottom-0 right-0 left-0 p-4 lg:hidden bg-white z-50" x-show="navOpen" x-transition.duration.500ms>
+            <ul class="flex justify-between">
+                <li>
+                    <button class="flex flex-col items-center gap-1">
+                        <ion-icon name="home-outline" class="text-2xl"></ion-icon>
+                        <span class="font-bold text-base text-kuning">Home</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex flex-col items-center gap-1">
+                        <ion-icon name="business-outline" class="text-2xl text-gray-400"></ion-icon>
+                        <span class="font-normal text-base text-gray-400">About</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex flex-col items-center gap-1">
+                        <ion-icon name="briefcase-outline" class="text-2xl text-gray-400"></ion-icon>
+                        <span class="font-normal text-base text-gray-400">Business</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex flex-col items-center gap-1">
+                        <ion-icon name="body-outline" class="text-2xl text-gray-400"></ion-icon>
+                        <span class="font-normal text-base text-gray-400">Services</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <section>
+        <div class="container mx-auto px-4 py-20 lg:py-16">
+             <div class="grid grid-cols-12 items-center">
+                <div class="col-span-12 lg:col-span-4 order-2 lg:order-1">
+                    <h1 class="mt-4 mb-6 font-bold text-[40px] leading-tight text-center lg:text-start">Leading the Future of <span class="text-kuning">Nickel Trading</span> Worldwide</h1>
+                    <p class="mb-8 text-gray-400 text-center text-base opacity-50 font-inter lg:text-start">We empower our clients with unparalleled expertise and a commitment to sustainability, ensuring a steady supply of premium nickel to meet the demands of a growing global market</p>
+                </div>
+                <div class="col-span-12 lg:col-span-8 order-1 lg:order-2">
+                    <img src="../public/asset/icon/Group 1.png" class="w-full" alt="">
+                </div>
+             </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>
